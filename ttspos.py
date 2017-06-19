@@ -61,7 +61,7 @@ clf = Pipeline([
     ('classifier', DecisionTreeClassifier(criterion='entropy'))
 ])
  
-clf.fit(X[:10000], y[:10000])   # Use only the first 10K samples if you're running it multiple times. It takes a fair bit :)
+clf.fit(X[:10000], y[:10000])   # Use only the first 10K samples if you're running it multiple times.
  
 print 'Training completed'
  
