@@ -13,7 +13,7 @@ from nltk import pos_tag, word_tokenize
 
 tagged_sentences =nltk.corpus.treebank.tagged_sents()
 
-def features(sentence, index):
+def features(sentence, index):                        #used to define the features on which words should be classified.
     return {
         'word': sentence[index],
         'is_first': index == 0,
@@ -37,7 +37,7 @@ def features(sentence, index):
 def untag(tagged_sentence):
     return [w for w, t in tagged_sentence]
 
-cutoff = int(.70 * len(tagged_sentences))
+cutoff = int(.70 * len(tagged_sentences))                     #taking 70% for training and 30% for testing
 training_sentences = tagged_sentences[:cutoff]
 test_sentences = tagged_sentences[cutoff:]
  
@@ -115,11 +115,11 @@ def getPOS():
     plt.xlabel('Parts of Speech')
     plt.ylabel('Frequency')
     plt.title("Parts of Speech Occurence")
-    plt.show()
+    plt.show()                                       #plotting frequency of noun,verb,adjective on bar graph
 
 
 root =Tk()
-frame = Frame(root, width=200, height=200)
+frame = Frame(root, width=200, height=200)        #Tkinkter window for GUI
 root.wm_title("Text to Speech")
 
 L1 = Label(root, text="Enter text")
